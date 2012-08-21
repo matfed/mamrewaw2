@@ -7,3 +7,6 @@ class MenuEntry(models.Model):
 
     def __unicode__(self):
         return self.caption
+
+    def check_if_selected(self, path):
+        self.selected = path == self.link
