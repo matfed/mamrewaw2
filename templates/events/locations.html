@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Miejsca spotkań</h1>
+{% if location_list %}
+    <ul>
+    {% for location in location_list %}
+    <li><a name="{{location.pk}}" /><h2>{{location.title}}</h2>
+    {% if location.address %}
+    <p>{{location.address}}</p>
+    {% endif %}
+    {% if location.info %}
+    <p>{{location.info}}</p></li>
+    {% endif %}
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Brak opisanych miejsc.</p>
+{% endif %}
+{% endblock %}
+

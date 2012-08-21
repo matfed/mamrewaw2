@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="/events/">Kalendarium</a>
+
+<h1>{{event.title}}</h1>
+<p>{{event.start}}</p>
+{% if event.location %}
+<p>Miejsce: <a href="/events/locations/#{{event.location.pk}}">{{event.location.title}}</a></p>
+{% endif %}
+<p>{{event.info}}</p>
+{% endblock %}

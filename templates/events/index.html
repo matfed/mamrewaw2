@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="/events/archive/">Archiwum</a>
+<h1>Kalendarium</h1>
+{% if event_list %}
+    <ul>
+    {% for event in event_list %}
+        <li><a href="/events/{{event.pk}}">{{event.start}} - {{event.title}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Brak wydarzeń.</p>
+{% endif %}
+{% endblock %}
