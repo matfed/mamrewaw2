@@ -5,12 +5,12 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', 'utils.direct_to_template', {'template': 'index.html'}),
+    url(r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}),
     url(r'^events/$', 'events.views.index'),
     url(r'^events/archive/$', 'events.views.archive'),
     url(r'^events/(?P<event_id>\d+)/$', 'events.views.detail'),
     url(r'^events/locations/$', 'events.views.locations'),
-    url(r'^regulations/$', 'utils.direct_to_template', {'template': 'regulations.html'}),
+    url(r'^regulations/$', 'django.views.generic.simple.direct_to_template', {'template': 'regulations.html'}),
     # Examples:
     # url(r'^$', 'mamrewaw2.views.home', name='home'),
     # url(r'^mamrewaw2/', include('mamrewaw2.foo.urls')),

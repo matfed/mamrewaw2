@@ -1,4 +1,5 @@
 # Django settings for mamrewaw2 project.
+import django.conf.global_settings as DEFAULT_SETTINGS
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -99,6 +100,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 )
+
+TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
+    'mamrewaw2.context_processors.menu_entries_adder',
+    'mamrewaw2.context_processors.latest_events_adder',)
 
 ROOT_URLCONF = 'mamrewaw2.urls'
 
