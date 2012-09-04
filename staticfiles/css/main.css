@@ -78,17 +78,18 @@ a:visited {
 	background-color: #ffd800;
 	color: #5c3d00;
 } 
+
 #container {
 	background-color: #fff;
-	position: relative;
-	width: 750px;
-	min-height:100%;
-	margin: 0 auto;
 	padding:0;
-	padding-top:1em;
-	padding-bottom:1em;
-	box-shadow: black 0 0 0.5em;
+    width: 750px;
+	margin: 0 auto;
+	min-height:100%;
+	position:relative;
+    box-shadow: black 0 0 0.5em;
+	padding:1em 0;
 }
+
 .infobox {
 	display:block;
 	padding-left:15px;
@@ -135,10 +136,6 @@ a:visited {
 .ender {
 	width:100%;
 	clear:left;
-}
-
-#content {
-	padding: 0 15px;
 }
 
 #events {
@@ -209,4 +206,3 @@ div.location {
 div.location .map {
 	text-align:center;
 }
-
