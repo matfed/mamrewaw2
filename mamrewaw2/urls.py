@@ -10,7 +10,6 @@ urlpatterns = patterns('',
     url(r'^events/archive/$', 'events.views.archive'),
     url(r'^events/(?P<event_id>\d+)/$', 'events.views.detail'),
     url(r'^events/locations/$', 'events.views.locations'),
-    url(r'^regulations/$', 'django.views.generic.simple.direct_to_template', {'template': 'regulations.html'}),
     # Examples:
     # url(r'^$', 'mamrewaw2.views.home', name='home'),
     # url(r'^mamrewaw2/', include('mamrewaw2.foo.urls')),

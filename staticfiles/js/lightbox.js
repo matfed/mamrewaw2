@@ -30,6 +30,7 @@ function showLightboxFunc(lightbox, overlay) {
 	lightbox.find('a.close').click(function() {
 		overlay.fadeOut();
 		lightbox.hide();
+		return false;
 	});
 	
 	// If window was resized, calculate the new overlay dimensions
