@@ -23,7 +23,21 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="**/*.py" />
+    <Compile Include="events\admin.py" />
+    <Compile Include="events\models.py" />
+    <Compile Include="events\tests.py" />
+    <Compile Include="events\views.py" />
+    <Compile Include="events\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="navigation\admin.py" />
+    <Compile Include="navigation\models.py" />
+    <Compile Include="navigation\tests.py" />
+    <Compile Include="navigation\views.py" />
+    <Compile Include="navigation\__init__.py" />
+    <Compile Include="settings.py" />
+    <Compile Include="urls.py" />
+    <Compile Include="__init__.py" />
+    <Compile Include="context_processors.py" />
     <!--
     <Compile Include="manage.py" />
     <Compile Include="settings.py" />

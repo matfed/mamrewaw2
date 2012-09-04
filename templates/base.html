@@ -2,97 +2,45 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-
-<style type="text/css" media="screen">
-body {
-	margin: 0;
-	padding: 0;
-	font-family:Arial, Helvetica, sans-serif;
-}
-
-#header {
-	margin-left:2em;
-	margin-right:2em;
-	padding:1em;
-	border-bottom: medium green solid;
-	text-align: center;
-}
-
-#content {
-	position:absolute;
-	margin-top:2em;
-	left:3em;
-	right:26em;
-	float:left;
-}
-#right {
-	position:absolute;
-	margin-top:1em;
-	right:2em;
-	width:22em;
-}
-
-.menu-gadget {
-	border-left: medium green solid;
-	padding-left: 1em;
-	padding-right: 1em;
-	padding-top: 0.1em;
-	padding-bottom: 0.1em;
-	margin-bottom: 1em;
-	font-size:small;
-}
-.menu-gadget h2 {
-	font-size:medium;
-}
-
-.menu-gadget ul {
-	list-style:none;
-	margin-left:1em;
-	padding-left:0;
-}
-
-#events-gadget-more {
-	text-align:right;
-}
-
-</style>
-
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link rel="stylesheet" type="text/css" media="all" href="{{STATIC_URL}}css/main.css" />
+<script type="text/javascript" src="{{STATIC_URL}}js/jquery-1.8.0.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/jquery.cookie.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/lightbox.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/infobox.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+    	$(".infobox").each(addInfoboxNature);
+    	
+    	$('#black-overlay').hide()
+    	
+		$('.powsin-details-href').click(showLightboxFunc($('#powsin-details'), $('#black-overlay')));
+		$('.milanowek-details-href').click(showLightboxFunc($('#milanowek-details'), $('#black-overlay')));
+    });
+</script>
 <title>
   {% block title %}
   Mamre Warszawa
   {% endblock %}
 </title>
 </head>
+
 <body>
-<div id="header"><img width="50" height="80" src="logo.png" alt="logo" style="float:left; margin:1em"><h1>Wspólnota Przymierza Rodzin MAMRE</h1><h2>Warszawa</h2></div>
+<div id="header">
+<div id="facebook-link"><a href="https://www.facebook.com/pages/Mamre-Warszawa/267339230020795" target="_blank">
+	<img src="{{STATIC_URL}}images/facebook.png" alt="Facebook" /></a></div>
+<ul id="horisontal-menu">
+  {% for entry in menu_entries %}
+  <li {% if entry.selected  %}class="selected"{% endif %}>
+    <a href="{{entry.link}}">{{entry.caption}}</a></li>
+  {% endfor %}
+</ul></div>
+<div id="container">
 <div id="content">
   {% block content %}
   {% endblock %}
 </div>
-<div id="right">
-  {% if latest_events_list %}
-	<div id="events-gadget" class="menu-gadget"><h2>Najbliższe wydażenia</h2>
-  <ul>
-    {% for event in latest_events_list %}  
-    <li><a href="/events/{{event.pk}}">{{event.start}} - {{event.title}}</a></li>
-    {% endfor %}
-	</ul>
-	<div id="events-gadget-more"><a href="/events/">więcej...</a></div>
-  </div>
-  {% endif %}
-
-  {% if menu_entries %}
-	<div class="menu-gadget"><h2>Informacje</h2>
-	<ul>
-    {% for entry in menu_entries %}
-    <li>{% if entry.selected  %}*{% endif %}
-      <a href="{{entry.link}}">{{entry.caption}}</a></li>
-    {% endfor %}
-	</ul></div>
-  {% endif %}
 </div>
 </body>
-
 </html>
 
