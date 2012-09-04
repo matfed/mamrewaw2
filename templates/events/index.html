@@ -34,7 +34,7 @@
 <a href="#" class="close">Close</a>
 <h2>{{location.title}}</h2>
 {% if location.address %}
-    <p class="address">{{location.address}}</p>
+    <p class="address">{{location.address|safe}}</p>
 {% endif %}
 {% if location.url %}
 <p><a href="{{location.url}}" target="_blank">{{location.url}}</a></p>
