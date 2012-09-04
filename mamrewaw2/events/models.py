@@ -1,4 +1,7 @@
+import locale
 from django.db import models
+
+#locale.setlocale(locale.LC_TIME, 'pl_PL')
 
 class Location(models.Model):
     title = models.CharField(max_length=200)
@@ -17,9 +20,11 @@ class Event(models.Model):
 
     def start(self):
         if self.show_time:
-            return self.start_date
+            return self.start_date.strftime('%A, %d.%m.%Y %H:%M')
+            #return self.start_date
         else:
-            return self.start_date.date()
+            return self.start_date.strftime('%A, %d.%m.%Y')
+            #return self.start_date.date()
 
     def __unicode__(self):
         return str(self.start()) + ' - ' + self.title

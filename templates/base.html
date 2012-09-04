@@ -11,11 +11,8 @@
 <script type="text/javascript">
     $(document).ready(function() {
     	$(".infobox").each(addInfoboxNature);
-    	
-    	$('#black-overlay').hide()
-    	
-		$('.powsin-details-href').click(showLightboxFunc($('#powsin-details'), $('#black-overlay')));
-		$('.milanowek-details-href').click(showLightboxFunc($('#milanowek-details'), $('#black-overlay')));
+    	{% block document-ready %}
+    	{% endblock %}
     });
 </script>
 <title>
@@ -40,6 +37,9 @@
   {% block content %}
   {% endblock %}
 </div>
+
+{% block body-end %}
+{% endblock %}
 </div>
 </body>
 </html>

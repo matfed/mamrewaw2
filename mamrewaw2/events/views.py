@@ -6,7 +6,10 @@ from django.shortcuts import get_object_or_404
 
 def index(request):
     event_list = Event.objects.filter(start_date__gte=datetime.now().date()).order_by('start_date')
-    return render_to_response('events/index.html', {'event_list': event_list}, context_instance=RequestContext(request))
+    location_list = Location.objects.all()
+    return render_to_response('events/index.html', 
+                              {'event_list': event_list, 'location_list': location_list}, 
+                              context_instance=RequestContext(request))
 
 def archive(request):
     event_list = Event.objects.all().order_by('start_date')

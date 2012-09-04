@@ -1,15 +1,49 @@
 {% extends "base.html" %}
 
+{% block document-ready %}
+
+    $('#black-overlay').hide()
+   	{% for location in location_list %}
+   	$('.location{{location.pk}}-details-href').click(showLightboxFunc($('#location{{location.pk}}-details'), $('#black-overlay')));
+   	{% endfor %}
+{% endblock %}
+
 {% block content %}
-<a href="/events/archive/">Archiwum</a>
-<h1>Kalendarium</h1>
 {% if event_list %}
-    <ul>
+    <ul id="events">
     {% for event in event_list %}
-        <li><a href="/events/{{event.pk}}">{{event.start}} - {{event.title}}</a></li>
+        <li>
+        <h2>{{event.title}}</h2>
+		<p class="timeLocation">{{event.start}}{% if event.location %};
+		<a href="/events/locations/#{{event.location.pk}}" class="location{{event.location.pk}}-details-href">{{event.location.title}}</a>
+		{% endif %}
+		</p>
+        <p class="desc">{{event.info}}</p>
     {% endfor %}
     </ul>
 {% else %}
-    <p>Brak wydarzeń.</p>
+    <p id="events">Brak wydarzeń.</p>
 {% endif %}
+<div class="ender"></div>
 {% endblock %}
+
+{% block body-end %}
+<div id="black-overlay"></div>
+{% for location in location_list %}
+<div id="location{{location.pk}}-details" class="lightbox location">
+<a href="#" class="close">Close</a>
+<h2>{{location.title}}</h2>
+{% if location.address %}
+    <p class="address">{{location.address}}</p>
+{% endif %}
+{% if location.url %}
+<p><a href="{{location.url}}" target="_blank">{{location.url}}</a></p>
+{% endif %}
+<div class="map">
+<iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://mapy.google.pl/?ie=UTF8&amp;t=m&amp;ll=52.123411,21.102247&amp;spn=0.001976,0.003219&amp;z=17&amp;output=embed"></iframe><br /><small><a href="https://mapy.google.pl/?ie=UTF8&amp;t=m&amp;ll=52.123411,21.102247&amp;spn=0.001976,0.003219&amp;z=17&amp;source=embed" style="color:#0000FF;text-align:left" target="_blank">Wyświetl większą mapę</a></small>
+</div>
+</div>
+{% endfor %}
+
+{% endblock %}
+
