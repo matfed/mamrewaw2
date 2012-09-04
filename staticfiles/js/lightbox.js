@@ -20,6 +20,8 @@ function showLightboxFunc(lightbox, overlay) {
 		top:	arrPageScroll[1] + (arrPageSizes[3] / 10),
 		left:	arrPageScroll[0] + arrPageSizes[0] / 2 - lightbox.width() / 2
 	}).slideDown();
+	// Refresh IFrames within lightbox
+	lightbox.find( 'iframe' ).attr( 'src', function ( i, val ) { return val; });
 	// Assigning click events in elements to close overlay
 	overlay.click(function() {
 		overlay.fadeOut();
