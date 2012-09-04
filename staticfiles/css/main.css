@@ -50,15 +50,14 @@ a:visited {
 	box-shadow: black 0 0 0.5em;
 	z-index:10;
 }
-#facebook-link {
+a#facebook-link {
+	display:block;
 	position:absolute;
 	top:1em;
 	right:0;
 	width:40px;
 	height:40px;
-}
-#facebook-link img {
-	border:0
+	background-image:url('../images/facebook.png')
 }
 #horisontal-menu {
 	padding:0;
