@@ -1,17 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Miejsca spotkań</h1>
 {% if location_list %}
-    <ul>
+    <ul id="locations">
     {% for location in location_list %}
-    <li><a name="{{location.pk}}" /><h2>{{location.title}}</h2>
+    <li><a name="{{location.pk}}"></a><h1>{{location.title}}</h1>
+    {% if location.map %}
+    <div class="map">
+      <iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://mapy.google.pl/?ie=UTF8&amp;t=m{{location.map|safe}}&amp;output=embed"></iframe><br /><small><a href="https://mapy.google.pl/?ie=UTF8&amp;t=m{{location.map|safe}}&amp;source=embed" style="color:#0000FF;text-align:left" target="_blank">Wyświetl większą mapę</a></small>
+    </div>
+    {% endif %}
     {% if location.address %}
-    <p>{{location.address}}</p>
+    <p class="address">{{location.address|safe}}</p>
+    {% endif %}
+    {% if location.url %}
+    <p><a href="{{location.url}}" target="_blank">{{location.url}}</a></p>
     {% endif %}
     {% if location.info %}
-    <p>{{location.info}}</p></li>
+    <p>{{location.info|safe}}</p>
     {% endif %}
+    <div class="ender"></div>
+    </li>
     {% endfor %}
     </ul>
 {% else %}

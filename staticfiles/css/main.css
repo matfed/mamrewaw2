@@ -5,7 +5,14 @@
 	background-color: #ffd800;
 }
 h1 {
-	margin-top:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:large;
+	margin-top:0;	
+}
+
+h2 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:medium;
 }
 
 a {
@@ -59,7 +66,7 @@ a#facebook-link {
 	height:40px;
 	background-image:url('../images/facebook.png')
 }
-#horisontal-menu {
+ul#horisontal-menu {
 	padding:0;
 	padding-bottom:0.5em;
 	text-align:right;
@@ -70,12 +77,12 @@ a#facebook-link {
 	margin-top:0;
 	margin-bottom:0;
 }
-#horisontal-menu li {
+ul#horisontal-menu li {
 	display:inline;
 	margin:0;
 	padding:0;
 }
-#horisontal-menu li a {
+ul#horisontal-menu li a {
 	padding:0.5em;
 	color:#ffa800;
 	margin:0;
@@ -140,7 +147,7 @@ a#facebook-link {
 
 .ender {
 	width:100%;
-	clear:left;
+	clear:both;
 }
 
 #events {
@@ -152,8 +159,6 @@ a#facebook-link {
 }
 
 #events h2 {
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:medium;
 	margin-top: 1em;
 	margin-bottom:0.2em;
 }
@@ -213,4 +218,19 @@ div.location {
 
 div.location .map {
 	text-align:center;
+}
+
+#locations {
+	list-style:none;
+	padding: 0 1em;
+	margin: 0;
+}
+
+#locations .address {
+	font-family:Arial, Helvetica, sans-serif
+}
+
+#locations .map {
+	float:right;
+	margin: 0 0 1em 1em;
 }
