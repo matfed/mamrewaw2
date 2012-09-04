@@ -1,11 +1,12 @@
 from django.conf.urls.defaults import patterns, include, url
+from django.views.generic.simple import redirect_to
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}),
+    url(r'^$', redirect_to, {'url': '/events/'}),
     url(r'^events/$', 'events.views.index'),
     url(r'^events/archive/$', 'events.views.archive'),
     url(r'^events/(?P<event_id>\d+)/$', 'events.views.detail'),
