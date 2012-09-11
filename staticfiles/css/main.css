@@ -99,7 +99,7 @@ ul#horisontal-menu li a {
 
 #container {
     margin:0;
-	padding:1em 0;
+	padding:1em;
 }
 
 .infobox {
@@ -154,7 +154,7 @@ ul#horisontal-menu li a {
 	list-style: none;
 	float:left;
 	width:520px;
-	padding: 0 1em;
+	padding: 0;
 	margin: 0;
 }
 
