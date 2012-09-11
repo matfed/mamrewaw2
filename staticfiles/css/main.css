@@ -151,28 +151,68 @@ ul#horisontal-menu li a {
 }
 
 #events {
-	list-style: none;
 	float:left;
 	width:520px;
+}
+
+#events, #events ul {
+	list-style: none;
 	padding: 0;
 	margin: 0;
 }
 
-#events h2 {
-	margin-top: 1em;
-	margin-bottom:0.2em;
+#events ul li {
+	overflow:hidden;
+	margin-bottom: 1.5em;
+}
+
+#events .datebox {
+	float:left; 
+	text-align:center; 
+	width:80px;
+}
+
+#events .daymonth {
+	font-family:Arial, Helvetica, sans-serif; 
+	font-size:16pt; 
+	margin:0
+}
+
+#events .dayweek {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10pt;
+	margin:0;
+}
+
+#events .contentbox {
+	margin-left: 90px;
 }
 
 #events p.timeLocation {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:small;
-	margin-top:0;
+	margin:0;
 	margin-bottom:0.3em
 }
 
+#events h1 {
+	margin-top: 2em;
+	margin-bottom:1em;
+	font-size:10pt;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+
+#events h2 {
+	margin: 0em;
+	margin-bottom:0.1em;
+	font-size:14pt;
+	font-weight:normal;
+}
+
 #events p.desc {
-	margin-top:0.3em;
-	margin-bottom:0.3em;
+	font-size:11pt;
+	margin:0;
 	text-align:justify;
 }
 

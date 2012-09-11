@@ -9,20 +9,37 @@
 {% endblock %}
 
 {% block content %}
-{% if event_list %}
-    <ul id="events">
-    {% for event in event_list %}
-        <li>
-        <h2>{{event.title}}</h2>
-		<p class="timeLocation">{{event.start}}{% if event.location %};
-		<a href="/events/locations/#{{event.location.pk}}" class="location{{event.location.pk}}-details-href">{{event.location.title}}</a>
-		{% endif %}
-		</p>
-        <p class="desc">{{event.info}}</p>
-    {% endfor %}
+{% if grouped_events %}
+  <ul id="events">
+    {% for name, events in grouped_events %}
+    <li>
+    <h1>{{name}}</h1>
+    <ul>
+      {% for event in events %}
+      <li>
+      <div class="datebox">
+      <p class="daymonth">{{event.day_month}}</p>
+      <p class="dayweek">{{event.weekday}}</p>
+      </div>
+      <div class="contentbox">
+      <h2>{{event.title}}</h2>
+      <p class="timeLocation">
+      {% if event.start_time %}
+      godz. {{event.start_time}}{% endif %}{% if event.location and event.start_time %};{% endif %}
+      {% if event.location %}
+		  <a href="/events/locations/#{{event.location.pk}}" class="location{{event.location.pk}}-details-href">{{event.location.title}}</a>
+		  {% endif %}
+      </p>
+      <p class="desc">{{event.info}}</p>
+      </div>
+      </li>
+      {% endfor %}
     </ul>
+    </li>    
+    {% endfor %}
+  </ul>
 {% else %}
-    <p id="events">Brak wydarzeń.</p>
+  <p id="events">Brak wydarzeń.</p>
 {% endif %}
 <div class="ender"></div>
 {% endblock %}

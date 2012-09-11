@@ -18,7 +18,7 @@ def groupEvents(event_list):
     for event in event_list:
         group = (event.start_date.year, event.start_date.month)
         if group != last_group:
-            grouped_events.append((date(group[0], group[1], 1), []))
+            grouped_events.append((date(group[0], group[1], 1).strftime("%B %Y"), []))
             last_group = group
         grouped_events[-1][1].append(event)
     return grouped_events
