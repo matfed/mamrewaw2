@@ -11,21 +11,21 @@
 {% block content %}
 {% if grouped_events %}
   <ul id="events">
-    {% for name, events in grouped_events %}
+    {% for month, events in grouped_events %}
     <li>
-    <h1>{{name}}</h1>
+    <h1>{{ month|date:"F Y" }}</h1>
     <ul>
       {% for event in events %}
       <li>
       <div class="datebox">
       <p class="daymonth">{{event.day_month}}</p>
-      <p class="dayweek">{{event.weekday}}</p>
+      <p class="dayweek">{{event.start_date|date:"l"}}</p>
       </div>
       <div class="contentbox">
       <h2>{{event.title}}</h2>
       <p class="timeLocation">
-      {% if event.start_time %}
-      godz. {{event.start_time}}{% endif %}{% if event.location and event.start_time %};{% endif %}
+      {% if event.show_time %}
+      godz. {{event.start_date|date:"H:i"}}{% endif %}{% if event.location and event.show_time %};{% endif %}
       {% if event.location %}
 		  <a href="/events/locations/#{{event.location.pk}}" class="location{{event.location.pk}}-details-href">{{event.location.title}}</a>
 		  {% endif %}

@@ -23,15 +23,6 @@ class Event(models.Model):
     def day_month(self):
         return str(self.start_date.day) + ' ' + int_to_roman(self.start_date.month)
 
-    def weekday(self):
-        return self.start_date.strftime('%A')
-
-    def start_time(self):
-        if self.show_time:
-            return self.start_date.strftime('%H:%M')
-        else:
-            return None
-
     def start(self):
         if self.show_time:
             return self.start_date.strftime('%A, %d.%m.%Y %H:%M')
