@@ -286,7 +286,7 @@ div.location .map {
 	margin: 0;
 }
 
-#locations .address {
+#locations .address, #locations .url {
 	font-family:Arial, Helvetica, sans-serif
 }
 
