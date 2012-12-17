@@ -16,13 +16,22 @@
     <h1>{{ month|date:"F Y" }}</h1>
     <ul>
       {% for event in events %}
+      {% if not event.is_called_off %}
       <li>
+      {% else %}
+      <li class="calledOff">
+      {% endif %}
       <div class="datebox">
       <p class="daymonth">{{event.day_month}}</p>
       <p class="dayweek">{{event.start_date|date:"l"}}</p>
       </div>
       <div class="contentbox">
-      <h2>{{event.title}}</h2>
+      <h2>
+        {% if event.is_called_off %}
+          [ODWOŁANE]
+        {% endif %}
+        {{event.title}}
+      </h2>
       <p class="timeLocation">
       {% if event.show_time %}
       godz. {{event.start_date|date:"H:i"}}{% endif %}{% if event.location and event.show_time %};{% endif %}
@@ -39,7 +48,7 @@
     {% endfor %}
   </ul>
 {% else %}
-  <p id="events">Brak wydarzeń.</p>
+  <p id="events">Brak wydarzeń w najbliższym czasie</p>
 {% endif %}
 <div class="ender"></div>
 {% endblock %}

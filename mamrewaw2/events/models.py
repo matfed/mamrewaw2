@@ -40,6 +40,9 @@ class Event(models.Model):
     def __unicode__(self):
         return str(self.start()) + ' - ' + self.title
 
+    def is_called_off(self):
+        return self.mode == 'O'
+
 def int_to_roman(input):
    """
    Convert an integer to Roman numerals.

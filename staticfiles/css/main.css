@@ -186,10 +186,15 @@ ul#horisontal-menu li a {
 	margin-bottom: 1.5em;
 }
 
+#events .calledOff {
+	text-decoration:line-through;
+}
+
 #events .datebox {
 	float:left; 
 	text-align:center; 
 	width:80px;
+	text-decoration: inherit;
 }
 
 #events .daymonth {
