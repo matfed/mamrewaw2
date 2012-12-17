@@ -8,7 +8,7 @@ class Location(models.Model):
     address = models.CharField(max_length=500, blank=True)
     info = models.CharField(max_length=1000, blank=True)
     url = models.URLField(max_length=500, blank=True)
-    map = models.CharField(max_length=200, blank=True)
+    map = models.CharField(max_length=500, blank=True)
 
     def __unicode__(self):
         return self.title
