@@ -14,11 +14,17 @@ class Location(models.Model):
         return self.title
 
 class Event(models.Model):
+    MODE_CHOICES = (
+        ('S', 'Shown'),
+        ('H', 'Hidden'),
+        ('O', 'Called off'),
+    )
     start_date = models.DateTimeField()
     title = models.CharField(max_length=200)
     info = models.CharField(max_length=2000, blank=True)
-    show_time = models.BooleanField()
+    show_time = models.BooleanField(default=True)
     location = models.ForeignKey(Location, blank=True, null=True)
+    mode = models.CharField(max_length=1, choices=MODE_CHOICES, default='S')
 
     def day_month(self):
         return str(self.start_date.day) + ' ' + int_to_roman(self.start_date.month)

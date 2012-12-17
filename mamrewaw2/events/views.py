@@ -5,7 +5,7 @@ from events.models import Event, Location
 from django.shortcuts import get_object_or_404
 
 def index(request):
-    event_list = Event.objects.filter(start_date__gte=datetime.now().date()).order_by('start_date')
+    event_list = Event.objects.filter(start_date__gte=datetime.now().date()).exclude(mode='H').order_by('start_date')
     grouped_events = groupEvents(event_list)
     location_list = Location.objects.all()
     return render_to_response('events/index.html', 
@@ -24,7 +24,7 @@ def groupEvents(event_list):
     return grouped_events
 
 def archive(request):
-    event_list = Event.objects.all().order_by('start_date')
+    event_list = Event.objects.exclude(mode='H').order_by('start_date')
     return render_to_response('events/archive.html', {'event_list': event_list}, context_instance=RequestContext(request))
 
 def detail(request, event_id):
