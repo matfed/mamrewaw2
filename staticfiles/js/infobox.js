@@ -11,5 +11,9 @@
     	    $.cookie(cookieName, '', { expires: 365, path: '/' });
     	    box.slideUp();
     	});
+    	$(this).find("a.more").click(function() {
+    	    $.cookie(cookieName, '', { expires: 365, path: '/' });
+    	});
+
 	}
 }
