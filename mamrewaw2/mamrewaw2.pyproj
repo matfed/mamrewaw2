@@ -34,6 +34,10 @@
     <Compile Include="navigation\tests.py" />
     <Compile Include="navigation\views.py" />
     <Compile Include="navigation\__init__.py" />
+    <Compile Include="infoboxes\models.py" />
+    <Compile Include="infoboxes\tests.py" />
+    <Compile Include="infoboxes\views.py" />
+    <Compile Include="infoboxes\__init__.py" />
     <Compile Include="settings.py" />
     <Compile Include="urls.py" />
     <Compile Include="__init__.py" />
@@ -48,5 +52,6 @@
   <ItemGroup>
     <Folder Include="events\" />
     <Folder Include="navigation\" />
+    <Folder Include="infoboxes\" />
   </ItemGroup>
 </Project>

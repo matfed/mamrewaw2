@@ -105,7 +105,8 @@ MIDDLEWARE_CLASSES = (
 
 TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
     'mamrewaw2.context_processors.menu_entries_adder',
-    'mamrewaw2.context_processors.latest_events_adder',)
+    'mamrewaw2.context_processors.latest_events_adder',
+    'mamrewaw2.context_processors.infoboxes_adder',)
 
 ROOT_URLCONF = 'mamrewaw2.urls'
 
@@ -129,7 +130,8 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'events',
-    'navigation'
+    'navigation',
+    'infoboxes'
 )
 
 # A sample logging configuration. The only tangible logging

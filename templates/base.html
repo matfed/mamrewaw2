@@ -32,6 +32,16 @@
     <a href="{{entry.link}}">{{entry.caption}}</a></li>
   {% endfor %}
 </ul></div>
+{% for box in infoboxes %}
+<div id="infobox_{{box.id}}" class="infobox">
+  <div class="content">{{box.text|safe}}</div>
+  <ul>
+    {% if box.link %}
+    <li><a href="{{box.link}}">więcej</a></li>
+    {% endif %}
+    <li><a href="javascript:void(0)" class="hide">ukryj</a></li>
+  </ul></div>
+{% endfor %}
 <div id="container">
   {% block content %}
   {% endblock %}
