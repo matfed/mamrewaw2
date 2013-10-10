@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Wybory Mamre Warszawa</title>
+  </head>
+  <body>
+    <h1>Witaj!</h1>
+    <p>Wprowadź swój PIN</p>
+    <form action="/ballot/check/" method="post">
+      <input type="text" name="pin" />
+      <input type="hidden" name="uuid" value="{{uuid}}" />
+      <input type="submit" value="OK" />
+    </form>
+    
+  </body>
+</html>

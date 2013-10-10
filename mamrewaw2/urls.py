@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     url(r'^events/archive/$', 'events.views.archive'),
     url(r'^events/(?P<event_id>\d+)/$', 'events.views.detail'),
     url(r'^events/locations/$', 'events.views.locations'),
+    url(r'^ballot/landing/(?P<uuid>[a-f0-9]+)/', 'ballot.views.landing'),
     # Examples:
     # url(r'^$', 'mamrewaw2.views.home', name='home'),
     # url(r'^mamrewaw2/', include('mamrewaw2.foo.urls')),

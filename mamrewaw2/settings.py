@@ -131,7 +131,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'events',
     'navigation',
-    'infoboxes'
+    'infoboxes',
+    'ballot'
 )
 
 # A sample logging configuration. The only tangible logging
