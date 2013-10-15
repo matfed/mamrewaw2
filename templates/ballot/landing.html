@@ -5,9 +5,16 @@
   <body>
     <h1>Witaj!</h1>
     <p>Wprowadź swój PIN</p>
-    <form action="/ballot/check/" method="post">
+    {% if errors %}
+        <ul style="color: red;">
+            {% for error in errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form action="/ballot/check/" method="post">{% csrf_token %}
       <input type="text" name="pin" />
-      <input type="hidden" name="uuid" value="{{uuid}}" />
+      <input type="hidden" name="token" value="{{token}}" />
       <input type="submit" value="OK" />
     </form>
     

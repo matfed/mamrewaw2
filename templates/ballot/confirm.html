@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Wybory Mamre Warszawa</title>
+  </head>
+  <body>
+    <h1>Witaj, {{voter.name}}!</h1>
+    {% if selected %}
+        <p>Wybrałeś następujących kandydatów.</p>
+        <ul>
+        {% for candidate in selected %}
+            <li>{{candidate.name}}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nie wybrałeś żadnego kandydata.</p>
+    {% endif %}
+    <form action="/ballot/check/" method="post">{% csrf_token %}
+      <input type="hidden" name="pin" value="{{voter.pin}}"/>
+      <input type="hidden" name="token" value="{{voter.token}}" />
+      
+      <input type="submit" value="Zmień" />
+    </form>
+    <form action="/ballot/finish/" method="post">{% csrf_token %}
+      {% for candidate in selected %}
+          <input type="hidden" name="candidate" value="{{candidate.id}}" />
+      {% endfor %}
+      <input type="hidden" name="pin" value="{{voter.pin}}"/>
+      <input type="hidden" name="token" value="{{voter.token}}" />
+      
+      <input type="submit" value="Zatwierdź" />
+    </form>
+    
+  </body>
+</html>
