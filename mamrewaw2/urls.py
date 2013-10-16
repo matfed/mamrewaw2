@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^ballot/landing/(?P<token>[a-f0-9]+)/', 'ballot.views.landing'),
     url(r'^ballot/check/', 'ballot.views.check'),
     url(r'^ballot/confirm/', 'ballot.views.confirm'),
+    url(r'^ballot/finish/', 'ballot.views.finish'),
     # Examples:
     # url(r'^$', 'mamrewaw2.views.home', name='home'),
     # url(r'^mamrewaw2/', include('mamrewaw2.foo.urls')),

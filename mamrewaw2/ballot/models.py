@@ -23,8 +23,12 @@ class Candidate(models.Model):
         return self.name
 
 class Ballot(models.Model):
-    pass
+    def __unicode__(self):
+        return str(self.id)
 
 class Vote(models.Model):
     ballot = models.ForeignKey('Ballot')
     candidate = models.ForeignKey('Candidate')
+
+    def __unicode__(self):
+        return str(self.ballot.id) + " for " + self.candidate.name
