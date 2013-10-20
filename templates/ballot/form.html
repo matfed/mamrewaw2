@@ -3,8 +3,9 @@
     <title>Wybory Mamre Warszawa</title>
   </head>
   <body>
-    <h1>Witaj, {{voter.name}}!</h1>
-    <p>Wybierz swoich kandydatów. Możesz zagłosować na maksymalnie 3 osoby.</p>
+    <h1>Wybór kandydatów</h1>
+    <p>Jesteś zalogowany jako <strong>{{voter.name}}</strong>. Dane pozwalające na powiązanie oddanych głosów z Twoimi danymi osobowymi nie zostaną zapisane w bazie.</p>
+    <p>Wybierz swoich kandydatów. Możesz zagłosować na maksymalnie <strong>3 osoby.</strong></p>
     {% if errors %}
         <ul style="color: red;">
             {% for error in errors %}
@@ -13,14 +14,14 @@
         </ul>
     {% endif %}
     <form action="/ballot/confirm/" method="post">{% csrf_token %}
-      <ol>
+      <ul>
       {% for candidate in candidates %}
         <li>
           <input type="checkbox" id="cand_{{candidate.id}}" name="candidate" value="{{candidate.id}}" />
           <label for="cand_{{candidate.id}}">{{candidate.name}}</label>
         </li>
       {% endfor %}
-      </ol>
+      </ul>
       <input type="hidden" name="pin" value="{{voter.pin}}"/>
       <input type="hidden" name="token" value="{{voter.token}}" />
       <input type="submit" value="OK" />
