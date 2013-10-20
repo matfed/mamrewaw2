@@ -1,5 +1,6 @@
 # Django settings for mamrewaw2 project.
 import django.conf.global_settings as DEFAULT_SETTINGS
+from custom_settings import *
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
