@@ -20,6 +20,9 @@ def check(request):
     if not errors:
         try:
             voter = Voter.objects.get(token=token, pin=pin)
+            if voter.used:
+                return render_to_response('ballot/used.html', {'voter': voter}, 
+                                          context_instance=RequestContext(request))
             candidates = Candidate.objects.all()
             return render_to_response('ballot/form.html', {'voter': voter, 'candidates': candidates}, 
                                         context_instance=RequestContext(request))
