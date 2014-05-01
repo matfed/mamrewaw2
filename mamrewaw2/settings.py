@@ -71,7 +71,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    'D:/Users/fedo/mamrewaw2/staticfiles',
+    'C:/Users/matfed/src/mamrewaw2/staticfiles',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -105,14 +105,14 @@ MIDDLEWARE_CLASSES = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
-    'mamrewaw2.context_processors.menu_entries_adder',
-    'mamrewaw2.context_processors.latest_events_adder',
-    'mamrewaw2.context_processors.infoboxes_adder',)
+    'context_processors.menu_entries_adder',
+    'context_processors.latest_events_adder',
+    'context_processors.infoboxes_adder',)
 
-ROOT_URLCONF = 'mamrewaw2.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-    'D:/Users/fedo/mamrewaw2/templates'
+    'c:/Users/matfed/src/mamrewaw2/templates'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
