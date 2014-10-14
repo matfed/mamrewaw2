@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %}
+Mamre Warszawa — Kalendarium
+{% endblock %}
+
 {% block header %}
 Kalendarium
 {% endblock %}
@@ -27,11 +31,11 @@ Kalendarium
       {% endif %}
       <div class="container">
       <div class="row">
-      <div class="col-md-1">
+      <div class="col-sm-2 col-lg-1">
       <p class="daymonth event-line-fst">{{event.day_month}}</p>
       <p class="dayweek event-line-snd">{{event.start_date|date:"l"}}</p>
       </div>
-      <div class="col-md-11">
+      <div class="col-sm-8 col-lg-8">
       <h3 class="event-header event-line-fst">
         {% if event.is_called_off %}
           [ODWOŁANE]

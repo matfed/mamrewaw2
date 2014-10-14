@@ -8,6 +8,7 @@ body {
     height: 100%;
     color: #305c57;
     background-color: #fafafa;
+    font-family: "Times New Roman", serif;
     font-size: 14pt;
 }
 
@@ -139,6 +140,9 @@ img.logo {
 }
 
 
+.main-container {
+    margin-top:1em;
+}
 
 
 #supercontainer {
@@ -224,11 +228,6 @@ ul#horisontal-menu li a {
 	color: #5c3d00;
 } 
 
-#container {
-    margin:0;
-	padding:1em;
-}
-
 .infobox {
 	display:block;
 	padding-left:15px;
@@ -306,7 +305,6 @@ ul#horisontal-menu li a {
 
 #events .event-desc {
     text-align: justify;
-    font-family: "Times New Roman";
 }
 
 #black-overlay{
