@@ -83,12 +83,16 @@ img.logo {
     height: 200px;
     padding-top: 50px;
     text-align: left;
-    background: url(../img/events-bg.jpg) no-repeat center center scroll;
+    background: url(../img/bg.jpg) no-repeat center center scroll;
     background-color: #63b8ad;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+.events-intro {
+    background: url(../img/events-bg.jpg) no-repeat center center scroll;
 }
 
 .intro .intro-body {
