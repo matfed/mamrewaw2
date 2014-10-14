@@ -1,0 +1,9 @@
+
+@font-face {
+  font-family: 'Canter Light';
+  src: url('CanterLight.eot?#iefix') format('embedded-opentype'),  url('CanterLight.otf')  format('opentype'),
+	     url('CanterLight.woff') format('woff'), url('CanterLight.ttf')  format('truetype'), url('CanterLight.svg#CanterLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+

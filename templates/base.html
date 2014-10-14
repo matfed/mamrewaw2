@@ -1,55 +1,96 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-<head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<link rel="stylesheet" type="text/css" media="all" href="{{STATIC_URL}}css/main.css" />
-<script type="text/javascript" src="{{STATIC_URL}}js/jquery-1.8.0.js"></script>
-<script type="text/javascript" src="{{STATIC_URL}}js/jquery.cookie.js"></script>
-<script type="text/javascript" src="{{STATIC_URL}}js/lightbox.js"></script>
-<script type="text/javascript" src="{{STATIC_URL}}js/infobox.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-    	$(".infobox").each(addInfoboxNature);
-    	{% block document-ready %}
-    	{% endblock %}
-    });
-</script>
-<title>
-  {% block title %}
-  Mamre Warszawa
+    <title>
+      {% block title %}
+      Mamre Warszawa
+      {% endblock %}
+    </title>
+
+    <!-- Bootstrap -->
+    <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="{{STATIC_URL}}css/mamre.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}fonts/CanterLight.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}fonts/CanterBold.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand page-scroll" href="#page-top">
+            <img src="{{STATIC_URL}}img/logo-15-22.png" class="logo"> Mamre Warszawa 
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+          <ul class="nav navbar-nav">
+            {% for entry in menu_entries %}
+            <li {% if entry.selected  %}class="selected"{% endif %}>
+              <a href="{{entry.link}}">{{entry.caption}}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    
+    <!-- Intro Header -->
+    <header class="intro">
+      <div class="intro-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-1">
+            <h1 class="brand-heading"><img src="{{STATIC_URL}}img/logo.png" class="logo">Kalendarium</h1>
+          </div>
+        </div>
+      </div>
+      </div>
+    </header>
+    
+
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  {% block body-end %}
   {% endblock %}
-</title>
-</head>
 
-<body>
-<div id="supercontainer">
-<div id="header">
-<a id="facebook-link" href="https://www.facebook.com/mamre.warszawa" target="_blank"></a>
-<ul id="horisontal-menu">
-  {% for entry in menu_entries %}
-  <li {% if entry.selected  %}class="selected"{% endif %}>
-    <a href="{{entry.link}}">{{entry.caption}}</a></li>
-  {% endfor %}
-</ul></div>
-{% for box in infoboxes %}
-<div id="infobox_{{box.id}}" class="infobox">
-  <div class="content">{{box.text|safe}}</div>
-  <ul>
-    {% if box.link %}
-    <li><a href="{{box.link}}" class="more">więcej</a></li>
-    {% endif %}
-    <li><a href="javascript:void(0)" class="hide">ukryj</a></li>
-  </ul></div>
-{% endfor %}
-<div id="container">
-  {% block content %}
-  {% endblock %}
-</div>
-</div>
-
-{% block body-end %}
-{% endblock %}
-</body>
+  <script src="{{STATIC_URL}}js/jquery-1.8.0.js"></script>
+  <script src="{{STATIC_URL}}js/jquery.cookie.js"></script>
+  <script src="{{STATIC_URL}}js/jquery.easing.min.js"></script>
+  <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+  <script src="{{STATIC_URL}}js/mamre.js"></script>
+  <script src="{{STATIC_URL}}js/lightbox.js"></script>
+  <script src="{{STATIC_URL}}js/infobox.js"></script>
+  <script>
+      $(document).ready(function() {
+        $(".infobox").each(addInfoboxNature);
+        {% block document-ready %}
+        {% endblock %}
+      });
+  </script>
+  </body>
 </html>
 

@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'Canter Bold';
+  src: url('CanterBold.eot?#iefix') format('embedded-opentype'),  url('CanterBold.otf')  format('opentype'),
+	     url('CanterBold.woff') format('woff'), url('CanterBold.ttf')  format('truetype'), url('CanterBold.svg#CanterBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
