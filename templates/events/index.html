@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block header %}
+Kalendarium
+{% endblock %}
+
 {% block document-ready %}
 
     $('#black-overlay').hide()
@@ -10,37 +14,41 @@
 
 {% block content %}
 {% if grouped_events %}
-  <ul id="events">
+  <ul id="events" class="list-unstyled"> <!-- #events -->
     {% for month, events in grouped_events %}
     <li>
-    <h1>{{ month|date:"F Y" }}</h1>
-    <ul>
+    <h2>{{ month|date:"F Y" }}</h2>
+    <ul class="list-unstyled">
       {% for event in events %}
       {% if not event.is_called_off %}
-      <li>
+      <li class="event-item">
       {% else %}
-      <li class="calledOff">
+      <li class="event-item calledOff">
       {% endif %}
-      <div class="datebox">
-      <p class="daymonth">{{event.day_month}}</p>
-      <p class="dayweek">{{event.start_date|date:"l"}}</p>
+      <div class="container">
+      <div class="row">
+      <div class="col-md-1">
+      <p class="daymonth event-line-fst">{{event.day_month}}</p>
+      <p class="dayweek event-line-snd">{{event.start_date|date:"l"}}</p>
       </div>
-      <div class="contentbox">
-      <h2>
+      <div class="col-md-11">
+      <h3 class="event-header event-line-fst">
         {% if event.is_called_off %}
           [ODWOŁANE]
         {% endif %}
         {{event.title}}
-      </h2>
-      <p class="timeLocation">
+      </h3>
+      <p class="event-line-snd">
       {% if event.show_time %}
       godz. {{event.start_date|date:"H:i"}}{% endif %}{% if event.location and event.show_time %};{% endif %}
       {% if event.location %}
 		  <a href="/events/locations/#{{event.location.pk}}" class="location{{event.location.pk}}-details-href">{{event.location.title}}</a>
 		  {% endif %}
       </p>
-      <p class="desc">{{event.info}}</p>
+      <p class="event-desc">{{event.info}}</p>
       </div>
+      </div><!-- ./row -->
+      </div><!-- ./container -->
       </li>
       {% endfor %}
     </ul>

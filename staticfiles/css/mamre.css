@@ -8,12 +8,25 @@ body {
     height: 100%;
     color: #305c57;
     background-color: #fafafa;
+    font-size: 14pt;
 }
 
 h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     font-family: "Canter Light",Helvetica,Arial,sans-serif;
 }
+
+a {
+    color: #2f9e8e;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 
 img.logo {
     height: 0.7em;
@@ -264,83 +277,38 @@ ul#horisontal-menu li a {
 	clear:both;
 }
 
-#events {
-	float:left;
-	width:520px;
-}
-
-#events, #events ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-#events ul li {
-	overflow:hidden;
-	margin-bottom: 1.5em;
-}
-
 #events .calledOff {
-	text-decoration:line-through;
+  	text-decoration:line-through;
 }
 
-#events .datebox {
-	float:left; 
-	text-align:center; 
-	width:80px;
-	text-decoration: inherit;
+#events .event-line-fst {
+  	font-family: "Canter Bold", Helvetica, Arial, sans-serif; 
+	  font-size:24pt; 
+    margin:0;
 }
 
 #events .daymonth {
-	font-family:Arial, Helvetica, sans-serif; 
-	font-size:16pt; 
-	margin:0
+    text-align:center;
+}
+
+#events .event-header {
+    line-height: inherit;
+}
+
+#events .event-line-snd {
+	  font-family:Arial, Helvetica, sans-serif;
+	  font-size:10pt;
 }
 
 #events .dayweek {
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:10pt;
-	margin:0;
+    text-align: center;
 }
 
-#events .contentbox {
-	margin-left: 90px;
+#events .event-desc {
+    text-align: justify;
+    font-family: "Times New Roman";
 }
 
-#events p.timeLocation {
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:small;
-	margin:0;
-	margin-bottom:0.3em
-}
-
-#events h1 {
-	margin-top: 2em;
-	margin-bottom:1em;
-	font-size:10pt;
-	font-weight:bold;
-	text-transform:uppercase;
-}
-
-#events h2 {
-	margin: 0em;
-	margin-bottom:0.1em;
-	font-size:14pt;
-	font-weight:normal;
-}
-
-#events p.desc {
-	font-size:11pt;
-	margin:0;
-	text-align:justify;
-}
-
-#sidebar {
-	border:thin green dotted;
-	width:200px;
-	position:absolute;
-	right:0;
-}
 #black-overlay{
 	margin: 0;
 	position:absolute;
