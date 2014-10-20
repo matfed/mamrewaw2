@@ -40,6 +40,7 @@ img.logo {
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
     font-family: "Canter Bold", Helvetica, Arial, sans-serif;
+    font-weight: bold;
     font-size: 20pt;
     color: #fafafa;
     background-color: #63b8ad;
@@ -64,13 +65,16 @@ img.logo {
     -moz-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
     padding: 20px;
+    background-color: inherit;
 }
 
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus,
 .navbar-custom .nav li a.active {
     outline: 0;
-    background-color: rgba(255,255,255,.3);
+    color: #efefef;
+    background-color: inherit;
+/*    background-color: rgba(255,255,255,.3);*/
 }
 
 .navbar-custom .navbar-brand {
@@ -367,3 +371,44 @@ div.location .map {
 	float:right;
 	margin: 0 0 1em 1em;
 }
+
+.dropdown-menu {
+    font-size: 16pt;
+}
+.navbar-custom .nav .dropdown-menu li a {
+    color: #fafafa;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}    
+
+@media (min-width: 768px) {
+  .dropdown-menu {
+      font-family: Helvetica,Arial,sans-serif;
+      font-size: 10pt;
+      margin-top: -10px !important;
+      text-transform: none;
+      border: none;
+      border-radius: 0;
+      background-color: inherit;
+      box-shadow: none;
+      line-height: auto;
+      -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+      -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+      transition: background .5s ease-in-out,padding .5s ease-in-out;
+  }
+
+  .navbar-custom .nav .dropdown-menu li a {
+      padding: inherit;
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-bottom: 10px;
+  }
+  .navbar-custom .nav .dropdown-menu li a:hover {
+      color: #efefef;
+  }
+  .top-nav-collapse .dropdown-menu {
+      background-color: #63b8ad;
+  }
+
+}
+
