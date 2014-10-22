@@ -4,9 +4,9 @@ from navigation.models import MenuEntry
 from infoboxes.models import Infobox, Page
 
 def menu_entries_adder(request):
-    menu_entries = MenuEntry.objects.order_by('position')
-    for entry in menu_entries:
-        entry.check_if_selected(request.path_info)
+    menu_entries = MenuEntry.objects.filter(parent__isnull=True).order_by('position')
+#    for entry in menu_entries:
+#        entry.check_if_selected(request.path_info)
     my_context = {'menu_entries': menu_entries}
     return my_context
 

@@ -44,16 +44,20 @@
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
           <ul class="nav navbar-nav">
             {% for entry in menu_entries %}
+            {% if entry.children %}
             <li class="dropdown">
             <a href="{{entry.link}}" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">{{entry.caption}}</a>
               <ul class="dropdown-menu dropdown-menu-left">
-                <li><a href="#">Historia</a></li>
-                <li><a href="#">Statut i drogowskazy</a></li>
-                <li><a href="#">Diakonie</a></li>
-                <li><a href="#">Księża</a></li>
+                {% for subentry in entry.children %}
+                <li><a href="{{subentry.link}}">{{subentry.caption}}</a></li>
+                {% endfor %}
               </ul>
             </li>
+            {% else %}
+            <li><a href="{{entry.link}}">{{entry.caption}}</a></li>
+            {% endif %}
             {% endfor %}
+
           </ul>
         </div>
         <!-- /.navbar-collapse -->
