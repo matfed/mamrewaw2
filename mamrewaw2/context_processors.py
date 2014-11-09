@@ -3,6 +3,13 @@ from events.models import Event
 from navigation.models import MenuEntry
 from infoboxes.models import Infobox, Page
 
+def path_prefix_adder(request):
+    parts = filter(None,request.path_info.split('/'))
+    if len(parts) > 0:
+      return {'path_prefix': parts[0]}
+    else:
+      return {}
+
 def menu_entries_adder(request):
     menu_entries = MenuEntry.objects.filter(parent__isnull=True).order_by('position')
 #    for entry in menu_entries:

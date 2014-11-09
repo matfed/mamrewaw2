@@ -94,7 +94,7 @@ img.logo {
     -o-background-size: cover;
 }
 
-.events-intro {
+.intro-events {
     background: url(../img/events-bg.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;

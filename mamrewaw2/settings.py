@@ -105,6 +105,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
+    'context_processors.path_prefix_adder',
     'context_processors.menu_entries_adder',
     'context_processors.latest_events_adder',
     'context_processors.infoboxes_adder',)

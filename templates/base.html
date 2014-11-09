@@ -66,7 +66,7 @@
     </nav>
     
     <!-- Intro Header -->
-    <header class="intro {% block custom-intro %}{% endblock %}">
+    <header class="intro{% if path_prefix %} intro-{{path_prefix}}{% endif %}">
       <div class="intro-body">
       <div class="container">
         <h1 class="brand-heading"><img src="{{STATIC_URL}}img/logo.png" class="logo"><span class="title">{% block header %}Mamre Warszawa{% endblock %}</span></h1>
