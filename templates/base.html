@@ -69,11 +69,7 @@
     <header class="intro {% block custom-intro %}{% endblock %}">
       <div class="intro-body">
       <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-1">
-            <h1 class="brand-heading"><img src="{{STATIC_URL}}img/logo.png" class="logo">{% block header %}Mamre Warszawa{% endblock %}</h1>
-          </div>
-        </div>
+        <h1 class="brand-heading"><img src="{{STATIC_URL}}img/logo.png" class="logo"><span class="title">{% block header %}Mamre Warszawa{% endblock %}</span></h1>
       </div>
       </div>
     </header>
