@@ -22,8 +22,11 @@ $(function() {
 //    $('.navbar-toggle:visible').click();
 //});
 
+var timeout = 0
+
 $('.navbar-nav').hover(
   function() {
+    window.clearTimeout(timeout);
     header = $('.intro .intro-body .brand-heading .title')
     if ($('.navbar-nav').offset().left < header.offset().left + header.width()) {
       $('.intro .intro-body .brand-heading').hide();
