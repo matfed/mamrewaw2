@@ -6,10 +6,10 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', redirect_to, {'url': '/events/'}),
-    url(r'^events/$', 'events.views.index'),
-    url(r'^events/archive/$', 'events.views.archive'),
-    url(r'^events/(?P<event_id>\d+)/$', 'events.views.detail'),
+    url(r'^$', redirect_to, {'url': '/events/calendar/'}),
+    url(r'^events/calendar/$', 'events.views.index'),
+    url(r'^events/calendar/archive/$', 'events.views.archive'),
+    url(r'^events/calendar/(?P<event_id>\d+)/$', 'events.views.detail'),
     url(r'^events/locations/$', 'events.views.locations'),
     url(r'^ballot/landing/(?P<token>[a-f0-9]+)/', 'ballot.views.landing'),
     url(r'^ballot/check/', 'ballot.views.check'),
