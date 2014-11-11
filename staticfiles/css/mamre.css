@@ -107,6 +107,7 @@ img.logo {
 }
 
 .intro-fullscreen {
+    padding: 150px 0;
     height: auto;
     text-align: center;
 }
