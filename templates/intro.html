@@ -66,30 +66,66 @@
     </nav>
     
     <!-- Intro Header -->
-    <header class="intro{% if path_prefix %} intro-{{path_prefix}}{% endif %}">
+    <header class="intro intro-fullscreen">
       <div class="intro-body">
       <div class="container">
-        <h1 class="brand-heading"><img src="{{STATIC_URL}}img/logo.png" class="logo"><span class="title">{% block header %}Mamre Warszawa{% endblock %}</span></h1>
+        <h1 class="brand-heading"><img src="{{STATIC_URL}}img/logo.png" class="logo">Mamre Warszawa</h1>
+        <a href="#about" class="btn btn-circle page-scroll">
+          <i class="fa fa-angle-double-down animated"></i></a>
       </div>
       </div>
     </header>
     
 
-  <div class="container main-container">
-  <div class="row">
-  <div class="col-lg-10 col-lg-offset-1">
-    {% block content %}
-    {% endblock %}
-  </div>
-  </div>
-  </div>
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Podstawowe informacje</h2>
+                  <p><strong>Wspólnota Przymierza Rodzin MAMRE</strong> jest stowarzyszeniem wiernych o charakterze prorodzinnym i w swej duchowości korzysta z doświadczenia katolickiego Ruchu Odnowy w Duchu Świętym. Więcej informacji na stronie <a href="http://mamre.pl/" target="_blank">mamre.pl</a>.</p>
 
-  {% block body-end %}
-  {% endblock %}
+                  <p>W Warszawie Wspólnota działa od roku 2003. Oficjalna akceptacja tej działalności została wyrażona <a href="/static/misc/dekret.pdf" target="_blank">dekretem</a> Kazimierza Kardynała Nycza, Arcybiskupa Metropolity Warszawskiego z dn. 13 listopada 2012 r.</p>
+                
+            </div>
+        </div>
+    </section>
 
-  <footer>
+    <aside class="group-photo"></aside>
+
+    <section id="proposals" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Propozycje</h2>
+                  <p>Zapraszamy do udziału w organizowanych przez nas spotkaniach! Przeważnie w II piątek miesiąca w Powsinie odbywają się Msze św. z modlitwą o uzdrowienie, natomiast w ostatni piątek &mdash; adoracje Najświętszego sakramentu na Sadybie.</p>
+            </div>
+        </div>
+    </section>
+    
+    <aside class="proposals-photo"></aside>
+    
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Kontakt</h2>
+                <p>Ze wspólnotą można się skontaktować emailowo za pomocą adresu 
+                <a href="mailto:kontakt@mamre.warszawa.pl">kontakt@mamre.warszawa.pl</a>. Zachęcamy też do polubienia naszego <a href="https://www.facebook.com/mamre.warszawa" target="_blank">fanpejdża</a> na Facebooku.</p>
+                  <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="mailto:kontakt@mamre.warszawa.pl" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">Email</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/mamre.warszawa" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-facebook-square fa-fw"></i> <span class="network-name">Facebook</span></a>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </section>
+
+<!--
+    <footer>
     &copy; <a href="mailto:kontakt@mamre.warszawa.pl">Mamre Warszawa</a>. <a href="/credits/">Credits</a>.
-  </footer>
+    </footer>
+-->
 
   <script src="{{STATIC_URL}}js/jquery-1.8.0.js"></script>
   <script src="{{STATIC_URL}}js/jquery.cookie.js"></script>
@@ -97,15 +133,6 @@
   <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
   <script src="{{STATIC_URL}}js/bootstrap-hover-dropdown.min.js"></script>
   <script src="{{STATIC_URL}}js/mamre.js"></script>
-  <script src="{{STATIC_URL}}js/lightbox.js"></script>
-  <script src="{{STATIC_URL}}js/infobox.js"></script>
-  <script>
-      $(document).ready(function() {
-        $(".infobox").each(addInfoboxNature);
-        {% block document-ready %}
-        {% endblock %}
-      });
-  </script>
   </body>
 </html>
 

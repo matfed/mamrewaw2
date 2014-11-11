@@ -17,6 +17,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Canter Light",Helvetica,Arial,sans-serif;
 }
 
+h2 {
+    font-family: "Canter Bold",Helvetica,Arial,sans-serif;
+}
+
 a {
     color: #2f9e8e;
     -webkit-transition: all .2s ease-in-out;
@@ -102,6 +106,11 @@ img.logo {
     -o-background-size: cover;
 }
 
+.intro-fullscreen {
+    height: auto;
+    text-align: center;
+}
+
 .intro .intro-body {
     display: table-cell;
     vertical-align: middle;
@@ -110,6 +119,11 @@ img.logo {
 .intro .intro-body .brand-heading {
     color: #fafafa;
     font-size: 40px;
+}
+
+.content-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 @media(min-width:767px) {
@@ -143,6 +157,10 @@ img.logo {
     .intro {
         height: 200px;
         padding: 0;
+    }
+
+    .intro-fullscreen {
+        height: 100%;
     }
 
     .intro .intro-body .brand-heading {
@@ -411,3 +429,159 @@ div.location .map {
 
 }
 
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+    border: 2px solid #fff;
+    border-radius: 35px;
+    font-size: 40px;
+    color: #fff;
+    background: 0 0;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+
+.btn-circle:hover,
+.btn-circle:focus {
+    outline: 0;
+    color: #fff;
+    background: rgba(255,255,255,.1);
+}
+
+.btn-circle i.animated {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+}
+
+.btn-circle:hover i.animated {
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+}
+
+@-webkit-keyframes pulse {    
+    0 {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-moz-keyframes pulse {    
+    0 {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -moz-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.group-photo {
+    height: 500px;
+    background: url('../img/group-photo.jpg') no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.proposals-photo {
+    height: 500px;
+    background: url('../img/proposals-photo.jpg') no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.btn-default {
+    border: 1px solid #305c57;
+    color: #305c57;
+    background-color: transparent;
+}
+
+.btn-default:hover,
+.btn-default:focus {
+    border: 1px solid #305c57;
+    outline: 0;
+    color: #fafafa;
+    background-color: #305c57;
+}
+
+ul.banner-social-buttons {
+    margin-top: 40px;
+}
+
+ul.banner-social-buttons .btn-default {
+    width: 10em;
+}
+
+@media(max-width:767px) {
+    ul.banner-social-buttons li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #fafafa;
+    background-color: #63b8ad;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+/*    font-weight: bold;*/
+    line-height: 2;
+}
+
+footer a {
+    color: #fafafa;
+}
+
+footer a:focus,
+footer a:hover {
+    color: #eaeaea;
+}
