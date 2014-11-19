@@ -515,7 +515,7 @@ div.location .map {
 
 .proposals-photo {
     height: 500px;
-    background: url('../img/proposals-photo.jpg') no-repeat center center scroll;
+    background: url('../img/procession-photo.jpg') no-repeat top center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
