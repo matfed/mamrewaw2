@@ -8,7 +8,8 @@ body {
     height: 100%;
     color: #305c57;
     background-color: #fafafa;
-    font-family: "Times New Roman", serif;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 300;
     font-size: 14pt;
 }
 
@@ -232,7 +233,7 @@ ul#horisontal-menu {
 	padding-bottom:0.5em;
 	text-align:right;
 	list-style-type: none; 
-	font-family:Arial, Helvetica, sans-serif;
+	font-family:"Roboto", Arial, sans-serif;
 	font-weight:bold;
 	margin-right:5em;
 	margin-top:0;
@@ -258,54 +259,6 @@ ul#horisontal-menu li a {
 	color: #5c3d00;
 } 
 
-.infobox {
-	display:block;
-	padding-left:15px;
-	padding-right:15px;
-	margin-top:1em;
-	padding-bottom:0;
-	border-radius: 0 0 1em 1em;
-	box-shadow: black 0 0.3em 0.5em -0.3em;
-}
-.infobox .content {
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:small;
-	margin-bottom:0;
-}
-
-.infobox ul {	
-	padding:0;
-	padding-bottom:0.2em;
-	text-align:right;
-	list-style-type: none; 
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight:bold;
-	font-size:small;
-	margin-right:1em;
-	margin-bottom:0;
-	margin-top:0;
-}
-.infobox ul li {
-	display:inline;
-	margin:0;
-	padding:0;
-}
-.infobox ul li a {
-	padding: 0.2em 0.5em;
-	color:#ffa800;
-	margin:0;
-}
-.infobox ul li a:hover {
-	background-color: #ffd800;
-	color: #5c3d00;
-	text-decoration:none;
-}
-
-.ender {
-	width:100%;
-	clear:both;
-}
-
 #events .calledOff {
   	text-decoration:line-through;
 }
@@ -325,7 +278,7 @@ ul#horisontal-menu li a {
 }
 
 #events .event-line-snd {
-	  font-family:Arial, Helvetica, sans-serif;
+	  font-family:"Roboto", Arial, sans-serif;
 	  font-size:10pt;
 }
 
@@ -368,7 +321,7 @@ div.location {
 	width:400px;
 	margin: 0 auto;
 	padding:1em;
-	font-family:Arial, Helvetica, sans-serif;
+	font-family:"Roboto", Arial, sans-serif;
 }
 
 div.location .map {
@@ -382,7 +335,7 @@ div.location .map {
 }
 
 #locations .address, #locations .url {
-	font-family:Arial, Helvetica, sans-serif
+	font-family:"Roboto", Arial, sans-serif
 }
 
 #locations .map {
@@ -401,7 +354,7 @@ div.location .map {
 
 @media (min-width: 768px) {
   .dropdown-menu {
-      font-family: Helvetica,Arial,sans-serif;
+      font-family: "Roboto",Arial,sans-serif;
       font-size: 10pt;
       margin-top: -10px !important;
       text-transform: none;
@@ -572,7 +525,7 @@ footer {
     color: #fafafa;
     background-color: #63b8ad;
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
     font-size: 10pt;
 /*    font-weight: bold;*/
     line-height: 2;
