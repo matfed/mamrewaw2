@@ -10,7 +10,11 @@ body {
     background-color: #fafafa;
     font-family: "Roboto", Arial, sans-serif;
     font-weight: 300;
-    font-size: 14pt;
+    font-size: 12pt;
+}
+
+strong {
+    font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
