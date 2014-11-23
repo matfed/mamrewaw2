@@ -119,6 +119,14 @@ img.logo {
     -o-background-size: cover;
 }
 
+.intro-others {
+    background: url(../img/others-bg.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
 .intro-fullscreen {
     padding: 150px 0;
     height: auto;
