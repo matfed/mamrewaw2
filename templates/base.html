@@ -37,7 +37,7 @@
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
             <i class="fa fa-bars"></i>
           </button>
-          <a class="navbar-brand page-scroll" href="#page-top">
+          <a class="navbar-brand page-scroll" href="/">
             <img src="{{STATIC_URL}}img/logo.png" class="logo"> Mamre Warszawa 
           </a>
         </div>
@@ -71,7 +71,7 @@
     <header class="intro{% if path_prefix %} intro-{{path_prefix}}{% endif %}">
       <div class="intro-body">
       <div class="container">
-        <h1 class="brand-heading"><img src="{{STATIC_URL}}img/logo.png" class="logo"><span class="title">{% block header %}Mamre Warszawa{% endblock %}</span></h1>
+        <h1 class="brand-heading"><a href="/"><img src="{{STATIC_URL}}img/logo.png" class="logo"></a><span class="title">{% block header %}Mamre Warszawa{% endblock %}</span></h1>
       </div>
       </div>
     </header>
