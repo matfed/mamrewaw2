@@ -93,7 +93,6 @@ img.logo {
     display: table;
     width: 100%;
     height: 200px;
-    margin-top: 50px;
     text-align: left;
     background: url(../img/bg.jpg) no-repeat center center scroll;
     background-color: #63b8ad;
@@ -141,6 +140,44 @@ img.logo {
 .intro .intro-body .brand-heading {
     color: #fafafa;
     font-size: 40px;
+}
+
+.infoboxes {
+    text-align: left;
+    color: #fafafa;
+    background-color: #63b8ad;
+    margin-top: 65px;
+}
+
+.infoboxes .wrapper {
+    padding: 0.5em 1em;
+}
+
+.infoboxes header {
+    display: none;
+}
+
+@media(min-width:767px) {
+.infoboxes {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+    background: none;
+}
+.infoboxes header {
+    display: block;
+}
+
+}
+.infoboxes a {
+    color: #fafafa;
+    font-weight: normal;
+}
+
+.infoboxes a:focus,
+.infoboxes a:hover {
+    color: #eaeaea;
 }
 
 .content-section {

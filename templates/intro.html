@@ -66,6 +66,25 @@
       </div>
       <!-- /.container -->
     </nav>
+      <div class="infoboxes">
+      	{% if infoboxes %}
+	<div class="wrapper">
+        <header>
+        <h2>Najświeższe informacje</h2>
+	</header>
+	<ul class="list-unstyled">
+	  {% for box in infoboxes %}
+	  <li>
+	    {{box.text|safe}} 
+	    {% if box.link %}
+	      <a href="{{box.link}}">Więcej...</a>
+	    {% endif %}
+	  </li>
+	  {% endfor %}
+	</ul>
+	</div>
+	{% endif %}
+      </div>
     
     <!-- Intro Header -->
     <header class="intro intro-fullscreen">
@@ -77,7 +96,6 @@
       </div>
       </div>
     </header>
-    
 
     <section id="about" class="container content-section text-center">
         <div class="row">
