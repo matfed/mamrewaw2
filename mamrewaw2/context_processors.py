@@ -24,8 +24,9 @@ def latest_events_adder(request):
 
 def infoboxes_adder(request):
     try:
-        page = Page.objects.get(pk=request.path_info)
-        infoboxes = page.infobox_set.all()
+        # page = Page.objects.get(pk=request.path_info)
+        # infoboxes = page.infobox_set.all()
+	infoboxes = Infobox.objects.order_by('position')
         my_context = {'infoboxes': infoboxes}
         return my_context
     except Page.DoesNotExist:
