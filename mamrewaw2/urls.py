@@ -8,6 +8,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name="intro.html")),
+    url(r'^events/$', TemplateView.as_view(template_name="intro.html")),
     url(r'^events/calendar/$', 'events.views.index'),
     url(r'^events/calendar/archive/$', 'events.views.archive'),
     url(r'^events/calendar/(?P<event_id>\d+)/$', 'events.views.detail'),
