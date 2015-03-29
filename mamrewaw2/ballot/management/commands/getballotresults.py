@@ -8,6 +8,5 @@ class Command(NoArgsCommand):
     def handle_noargs(self, **options):
         candidates = Candidate.objects.annotate(num_votes=Count('vote')).order_by('-num_votes')
         for c in candidates:
-            print "{0.name}\t{0.num_votes}".format(c)
+            print u"{0.name}\t{0.num_votes}".format(c)
 
-        

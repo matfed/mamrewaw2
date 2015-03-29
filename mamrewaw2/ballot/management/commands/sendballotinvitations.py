@@ -15,7 +15,7 @@ class Command(NoArgsCommand):
 
 
 def generateMessage(voter):
-    return """
+    return u"""
 Witaj, {0.name}
 
 Aby zaglosowac na koordynatorow, wejdz na ponizsza strone:
