@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+Mamre Warszawa — Co nowego?
+{% endblock %}
+
+{% block header %}
+Co nowego?
+{% endblock %}
+
+{% block content %}
+{% if posts %}
+  <ul class="list-unstyled">
+    {% for post in posts %}
+    <li>
+    <h1><a href="/events/blog/{{post.pk}}/">{{post.title}}</a></h1>
+    <p><span style="font-size: 12pt; font-style: italic">{{post.date}}</span>
+    {% if post.recordings %}
+    <span style="left-margin: 1em; font-size: 10pt; font-weight: bold; text-transform: uppercase">
+    nagrania
+    </span>
+    {% endif %}
+    </p>
+    <p>{{post.lead}}</p>
+    </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p id="events">Brak wpisów</p>
+{% endif %}
+{% endblock %}
+
+

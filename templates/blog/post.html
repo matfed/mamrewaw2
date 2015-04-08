@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+Mamre Warszawa — {{post.title}}
+{% endblock %}
+
+{% block header %}
+Co nowego?
+{% endblock %}
+
+{% block content %}
+    <h1>{{post.title}}</h1>
+    <p><span style="font-size: 12pt; font-style: italic">{{post.date}}</span>
+    {% if post.recordings %}
+    <span style="left-margin: 1em; font-size: 10pt; font-weight: bold; text-transform: uppercase">
+    nagrania
+    </span>
+    {% endif %}
+    </p>
+    <p style="font-size: 14pt">{{post.lead}}</p>
+    <p>{{post.text}}</p>
+    {% if post.recordings %}
+    <h2>Nagrania</h2>
+    <ul>
+      {% for rec in post.recordings %}
+      <li>
+        {{rec.title}} &mdash; <a href="{{rec.content.url}}">pobierz</a>
+        <audio controls>
+	  <source src="{{rec.content.url}}" type="{{rec.type}}">
+        </audio>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+{% endblock %}
+
+

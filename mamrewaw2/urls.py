@@ -13,6 +13,8 @@ urlpatterns = patterns('',
     url(r'^events/calendar/archive/$', 'events.views.archive'),
     url(r'^events/calendar/(?P<event_id>\d+)/$', 'events.views.detail'),
     url(r'^events/locations/$', 'events.views.locations'),
+    url(r'^events/blog/$', 'blog.views.index'),
+    url(r'^events/blog/(?P<post_id>\d+)/$', 'blog.views.post'),
     # Examples:
     # url(r'^$', 'mamrewaw2.views.home', name='home'),
     # url(r'^mamrewaw2/', include('mamrewaw2.foo.urls')),
