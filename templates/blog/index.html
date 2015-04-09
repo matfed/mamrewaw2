@@ -14,13 +14,16 @@ Co nowego?
     {% for post in posts %}
     <li>
     <h1><a href="/events/blog/{{post.pk}}/">{{post.title}}</a></h1>
-    <p><span style="font-size: 12pt; font-style: italic">{{post.date}}</span>
+    <div style="margin: 0.5em 0">
+    <div style="font-size: 12pt; font-style: italic; vertical-align: middle; display: inline-block">{{post.date}}</div>
+    <ul style="margin: 0 0 0 1em; font-size: 10pt; font-weight: bold; text-transform: uppercase; vertical-align: middle; display: inline-block" class="list-inline">
     {% if post.recordings %}
-    <span style="left-margin: 1em; font-size: 10pt; font-weight: bold; text-transform: uppercase">
+    <li>
     nagrania
-    </span>
+    </li>
     {% endif %}
-    </p>
+    </ul>
+    </div>
     <p>{{post.lead}}</p>
     </li>
     {% endfor %}
