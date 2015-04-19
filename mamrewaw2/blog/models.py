@@ -4,7 +4,7 @@ from django.db import models
 class Post(models.Model):
     title = models.CharField(max_length=200)
     date = models.DateTimeField(auto_now_add=True)
-    img = models.ImageField(upload_to='blog/photos', null=True)
+    img = models.ImageField(upload_to='blog/photos', blank=True, null=True)
     lead = models.CharField(max_length=2000)
     text = models.TextField()
 
