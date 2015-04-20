@@ -13,9 +13,8 @@ Co nowego?
   <ul class="post-list list-unstyled">
     {% for post in posts %}
     <li>
-<div class="container-fluid">
-    <div class="row row-same-height post-row">
-    <div class="col-xs-2 col-same-height post-img" style="
+    <div class="row-same-height post-row">
+    <div class="col-same-height post-img" style="
       {% if post.img %}
       background: url('{{post.img.url}}') no-repeat center center scroll;
       {% else %}
@@ -24,7 +23,8 @@ Co nowego?
       {% endif %}
       background-size: cover;
 "></div>
-  <div class="col-xs-10 col-same-height post-text">
+  <div class="col-same-height post-text container-fluid">
+    <div class="col-xs-12 col-lg-10">
     <h1><a href="/events/blog/{{post.pk}}/">{{post.title}}</a></h1>
     <div class="post-info">
     <div class="post-date">{{post.date|date:"j E Y"}}</div>
@@ -36,10 +36,10 @@ Co nowego?
     {% endif %}
     </ul>
     </div>
-    <p>{{post.lead}}</p>
+    <p>{{post.lead|safe}}</p>
     </div>
-  </div>
-  </div>
+    </div>
+    </div>
     </li>
     {% endfor %}
   </ul>

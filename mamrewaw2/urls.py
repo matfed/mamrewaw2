@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^events/locations/$', 'events.views.locations'),
     url(r'^events/blog/$', 'blog.views.index'),
     url(r'^events/blog/(?P<post_id>\d+)/$', 'blog.views.post'),
+    url(r'^others/recordings/$', 'blog.views.recordings'),
     # Examples:
     # url(r'^$', 'mamrewaw2.views.home', name='home'),
     # url(r'^mamrewaw2/', include('mamrewaw2.foo.urls')),

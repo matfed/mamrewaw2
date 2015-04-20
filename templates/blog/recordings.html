@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Mamre Warszawa — Nagrania
+{% endblock %}
+
+{% block header %}
+Nagrania
+{% endblock %}
+
+{% block content %}
+<ul class="list-unstyled">
+{% for recset in recsets %}
+<li>
+  <h1>{{recset.title}}</h1>
+  <div class="recordings-date">{{post.date|date:"j E Y"}}</div>
+  <table class="recordings">
+    {% for rec in recset.recordings %}
+    <tr>
+      <td>{{rec.title}}</td>
+      <td><a href="{{rec.content.url}}" target="_blank">Pobierz</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+  
+</li>
+{% endfor %}
+</ul>
+{% endblock %}
+

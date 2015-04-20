@@ -13,9 +13,14 @@
 
 .post-list {
   margin: 0;
+  padding: 0;
 }
 
 .post-row .post-img {
+  padding: 0;
+  margin: 0;
+  width: 16%;
+
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
   -ms-filter: grayscale(100%);
@@ -36,8 +41,38 @@
   filter: grayscale(0%);
 }
 
+.post-row .post-gallery {
+  padding: 0;
+  margin: 0;
+}
+
+.post-row .post-gallery img {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+  
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.post-row .post-gallery img:hover {
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+.post-row {
+  margin: 0
+}
+
 .post-row .post-text {
-  padding: 1em 3em;
+  padding: 1em 1em 1em 3em;
 }
 
 .post-row .post-text h1 {
@@ -50,7 +85,6 @@
 
 .post-row .post-text .post-info .post-date {
   font-size: 12pt; 
-/*  font-style: italic; */
   vertical-align: middle; 
   display: inline-block;
 }
@@ -64,3 +98,14 @@
   display: inline-block
 }
 
+.post-row .post-text .post-lead {
+  font-size: 14pt;
+}
+
+.recordings td {
+  padding: 0 1em;
+}
+
+.recordings-date {
+  font-size: 12pt; 
+}
