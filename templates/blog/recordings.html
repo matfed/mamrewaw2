@@ -13,7 +13,7 @@ Nagrania
 {% for recset in recsets %}
 <li>
   <h1>{{recset.title}}</h1>
-  <div class="recordings-date">{{post.date|date:"j E Y"}}</div>
+  <div class="recordings-date">{{recset.date|date:"j E Y"}}</div>
   <table class="recordings">
     {% for rec in recset.recordings %}
     <tr>
