@@ -12,5 +12,5 @@ def post(request, post_id):
     return render_to_response('blog/post.html', {'post': p}, context_instance=RequestContext(request))
 
 def recordings(request):
-    sets = RecordingSet.objects.order_by('date')
+    sets = RecordingSet.objects.order_by('-date')
     return render_to_response('blog/recordings.html', {'recsets': sets}, context_instance=RequestContext(request))
