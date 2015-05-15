@@ -8,7 +8,7 @@ class RecordingSet(models.Model):
     date = models.DateTimeField()
 
     def __unicode__(self):
-        return self.title
+        return self.title + ' ' + instance.set.date.strftime('%d.%m.%Y')
 
     def recordings(self):
         return self.recording_set.all()
@@ -25,7 +25,7 @@ class Recording(models.Model):
     set = models.ForeignKey(RecordingSet)
 
     def __unicode__(self):
-        return self.title
+        return unicode(set) + ' / ' + self.title
 
 def post_img_file_name(instance, filename):
     fileName, fileExtension = path.splitext(filename)
