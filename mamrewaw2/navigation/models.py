@@ -7,7 +7,7 @@ class MenuEntry(models.Model):
     position = models.FloatField()
 
     def __unicode__(self):
-        return self.caption
+        return (unicode(self.parent)  + ' / ' if self.parent else '') + self.caption
 
     def check_if_selected(self, path):
         self.selected = path == self.link
