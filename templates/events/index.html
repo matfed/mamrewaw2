@@ -49,7 +49,7 @@ Kalendarium
 		  <a href="/events/locations/#{{event.location.pk}}" class="location{{event.location.pk}}-details-href">{{event.location.title}}</a>
 		  {% endif %}
       </p>
-      <p class="event-desc">{{event.info}}</p>
+      <p class="event-desc">{{event.info|safe}}</p>
       </div>
       </div><!-- ./row -->
       </div><!-- ./container -->
