@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from blog.models import Post, RecordingSet
 
 def index(request):
-    posts = Post.objects.order_by('date')
+    posts = Post.objects.order_by('-date')
     return render_to_response('blog/index.html', {'posts': posts}, context_instance=RequestContext(request))
 
 def post(request, post_id):
